@@ -2,6 +2,7 @@
 #define __JSMN_H_
 
 #include <stddef.h>
+#define JSMN_PARENT_LINKS 1 //static config
 
 #ifdef __cplusplus
 extern "C" {

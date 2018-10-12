@@ -1,5 +1,6 @@
 # You can put your build options here
 -include config.mk
+CC=gcc -O0 -g
 
 all: libjsmn.a 
 
@@ -31,6 +32,12 @@ simple_example: example/simple.o libjsmn.a
 jsondump: example/jsondump.o libjsmn.a
 	$(CC) $(LDFLAGS) $^ -o $@
 
+jsoncompact: example/jsoncompact.o libjsmn.a
+	$(CC) $(LDFLAGS) $^ -o $@
+
+jsonpretty: example/jsonpretty.o libjsmn.a
+	$(CC) $(LDFLAGS) $^ -o $@
+	
 clean:
 	rm -f *.o example/*.o
 	rm -f *.a *.so

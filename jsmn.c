@@ -54,7 +54,7 @@ static int jsmn_parse_primitive(jsmn_parser *parser, const char *js,
 			return JSMN_ERROR_INVAL;
 		}
 	}
-#ifdef JSMN_STRICT
+#if 1//def JSMN_STRICT //need this fragment to solve the issue: https://github.com/zserge/jsmn/issues/112
 	/* In strict mode primitive must be followed by a comma/object/array */
 	parser->pos = start;
 	return JSMN_ERROR_PART;
